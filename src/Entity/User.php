@@ -32,6 +32,12 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Is this the best you can do? Write more than {{ limit }} charts!!!",
+     *      maxMessage = "Hold on to your horses, Sherlock, you have reached your limit of {{ limit }} characters"
+     * )
      */
     private $password;
 

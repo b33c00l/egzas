@@ -92,6 +92,6 @@ class UserController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('login');
     }
 }
