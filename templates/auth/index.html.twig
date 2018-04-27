@@ -8,13 +8,13 @@
     {% endif %}
 
     <form action="{{ path('login') }}" method="post">
-        <label for="username">Username:</label>
+        <label for="username">Email:</label>
         <input type="text" id="username" name="_username" value="{{ username }}" />
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="_password" />
 
-        <input type="hidden" name="_target_path" value="{{ path('post_index') }}" />
+        <input type="hidden" name="_target_path" value="{{ path('home') }}" />
 
         <button type="submit">login</button>
     </form>

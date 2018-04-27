@@ -20,9 +20,9 @@ class PostController extends Controller
     /**
      * @Route("/", name="post_index", methods="GET")
      */
-    public function index(PostRepository $postRepository): Response
+    public function index(UserInterface $user): Response
     {
-        return $this->render('post/index.html.twig', ['posts' => $postRepository->findAll()]);
+        return $this->render('post/index.html.twig', ['posts' => $user->getPosts()]);
     }
 
     /**

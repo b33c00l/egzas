@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Post;
 use App\Repository\PostRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -36,5 +37,13 @@ class HomeController extends Controller
             'posts' => $posts,
             'pages' => $pages
         ]);
+    }
+
+    /**
+     * @Route("/{id}", name="show", methods="GET")
+     */
+    public function show(Post $post): Response
+    {
+        return $this->render('home/show.html.twig', ['post' => $post]);
     }
 }
