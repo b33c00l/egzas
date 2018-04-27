@@ -14,8 +14,9 @@
                 <div class="row justify-content-end mt-3">
                     {% if app.user %}
                         <a href="{{ path('post_new') }}" class="btn btn-outline-warning btn-sm mr-1">Create New Post</a>
-                        <a href="{{ path('user_index') }}" class="btn btn-outline-danger btn-sm mr-1">User List</a>
+                        <a href="{{ path('post_index') }}" class="btn btn-outline-danger btn-sm mr-1">Your Post List</a>
                         <a href="{{ path('user_new') }}" class="btn btn-outline-success btn-sm mr-1">Create New User</a>
+                        <a href="{{ path('user_index') }}" class="btn btn-outline-danger btn-sm mr-1">User List</a>
                         <a href="{{ path('home') }}" class="btn btn-outline-success btn-sm mr-1">Home</a>
                         <a href="{{ path('logout') }}" class="btn btn-outline-primary btn-sm">Logout</a>
                     {% else %}

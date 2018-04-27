@@ -26,8 +26,14 @@ class Post
     private $title;
 
     /**
-     * @ORM\Column(type="text", length=1000)
+     * @ORM\Column(type="text")
      * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Is it really your word limit? {{ limit }} - seriously???",
+     *      maxMessage = "Hold on to your horses, Sherlock, you have reached your limit of {{ limit }} characters"
+     * )
      */
     private $description;
 

@@ -7,18 +7,16 @@
     {% for post in posts %}
         <div class="row">
             <div class="col-12 text-center">
-                <a href="{{ path('show', {'id': post.id}) }}">
-                    <h5>{{ post.title }}</h5>
-                </a>
-            </div>
-            <div class="col-3 singleAd">
-                {% if app.user.username == post.user.username %}
-                    <a href="{{ path('post_index') }}">
-                        <p><i>Posted by:{{ post.user.username }}</i></p>
+                {% if app.user %}
+                    <a href="{{ path('show', {'id': post.id}) }}">
+                        <h5>{{ post.title }}</h5>
                     </a>
                 {% else %}
-                    <p><i>Posted by:{{ post.user.username }}</i></p>
+                    <h5>{{ post.title }}</h5>
                 {% endif %}
+            </div>
+            <div class="col-3 singleAd">
+                <p><i>Posted by:{{ post.user.username }}</i></p>
                 <p><i>Post date: {{ post.date ? post.date|date('Y-m-d H:i:s') : '' }}</i></p>
             </div>
             <div class="col-9 singleAd">
